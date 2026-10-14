@@ -1,0 +1,19 @@
+import random
+
+def simulate_binomial(Trials:int = 1000000):
+    exact_2_success = 0
+
+    for _ in range(Trials):
+        success_count = 0
+
+        for _ in range(3):
+            if random.random() < 0.80:
+                success_count += 1
+
+        if success_count == 2:
+            exact_2_success += 1
+    return exact_2_success / Trials
+print(f"Simulated Probability: {simulate_binomial():.4f}")
+
+
+        
